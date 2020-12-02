@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
+using Stripe;
 using netAPI.Models;
 
 namespace netAPI
@@ -31,6 +32,9 @@ namespace netAPI
                                                opt.UseInMemoryDatabase("sto.db"));
 
 
+
+            
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -46,7 +50,10 @@ namespace netAPI
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "netAPI v1"));
+                app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             }
+
+            
 
             app.UseRouting();
 

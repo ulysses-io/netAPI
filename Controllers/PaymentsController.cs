@@ -23,7 +23,7 @@ namespace netAPI.Controllers
     {
       // Set your secret key. Remember to switch to your live secret key in production!
     // See your keys here: https://dashboard.stripe.com/account/apikeys
-    StripeConfiguration.ApiKey = "sk_test_51HrRklGYoaaAuwGvYAXpUkWZ5hC7bvz0Irehbsprg3CQ2zYpAiZzouDG1DtG3m3ZyD5eN3Y7P9wlhCugQ1ippvDg009wi247g1";
+    StripeConfiguration.ApiKey = "";
     }
 
     [HttpPost]
